@@ -1,0 +1,15 @@
+ApplicationModules.push (angular) ->
+    angular.module("users").controller "LoginController", [
+        "$scope"
+        "$location"
+        "Authentication"
+        ($scope, $location, Authentication) ->
+
+            # initialize
+            $scope.credentials =
+                username: ""
+                password: ""
+
+            $scope.login = () ->
+                alert("asd")
+    ]

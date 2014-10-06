@@ -1,4 +1,1 @@
-generator-rnr-angular
-=====================
-
-Generator Ruby on Rails, AngularJS, Bootstrap
+Yo! Ruby On Rails Angular Generator

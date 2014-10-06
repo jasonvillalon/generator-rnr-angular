@@ -1,0 +1,7 @@
+ApplicationModules.push (angular) ->
+    angular.module("users").config ["$stateProvider", ($stateProvider) ->
+        $stateProvider.
+            state "login",
+                url: "/user/login",
+                templateUrl: "<%= loginview %>"
+    ]
