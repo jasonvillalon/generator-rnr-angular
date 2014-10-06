@@ -1,0 +1,2 @@
+window.ApplicationModules = []
+window.RegisterModule = []

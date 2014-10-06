@@ -1,0 +1,36 @@
+# twitter bootstrap
+gem 'bootstrap-sass'
+# auto prefixer
+gem 'autoprefixer-rails'
+# bower dependencies manager for rails
+gem 'bower-rails'
+# modernizr
+gem 'modernizr-rails', '~> 2.7.1'
+# requirejs
+gem 'requirejs-rails'
+# button sass
+gem 'compass-rails'
+# font awesome
+gem 'font-awesome-rails'
+# jasmine
+group :development, :test do
+  gem 'jasmine'
+  gem 'jasmine-rails'
+end
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'meta_request'
+end
+# rspec
+gem 'rspec'
+# livereload using guard server
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', require: false
+end
+# haml template
+gem 'haml'
+# grape api
+gem 'grape-entity'
+gem 'grape'
