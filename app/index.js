@@ -281,31 +281,31 @@ var RNRAngularGenerator = yeoman.generators.Base.extend({
     console.log(magenta('Processing modules'));
 		this.mkdir('app/assets/javascripts/modules');
 		this.mkdir('app/assets/javascripts/modules/core');
-		this.mkdir('app/assets/javascripts/modules/core/configs');
+		this.mkdir('app/assets/javascripts/modules/core/config');
 		this.mkdir('app/assets/javascripts/modules/core/controllers');
 		this.mkdir('app/assets/javascripts/modules/core/views');
 		this.mkdir('app/assets/javascripts/modules/core/directives');
 		this.mkdir('app/assets/javascripts/modules/core/services');
 		this.mkdir('app/assets/javascripts/modules/users');
-		this.mkdir('app/assets/javascripts/modules/users/configs');
+		this.mkdir('app/assets/javascripts/modules/users/config');
 		this.mkdir('app/assets/javascripts/modules/users/controllers');
 		this.mkdir('app/assets/javascripts/modules/users/views');
 		this.mkdir('app/assets/javascripts/modules/users/directives');
 		this.mkdir('app/assets/javascripts/modules/users/services');
 		this.slugifiedName = 'core';
-		this.template('app/_.module.coffee.erb', 'app/assets/javascripts/modules/core/core.module.coffee.erb');
-		this.loginview = '<%= asset_path("modules/users/views/login.view.html") %>';
-		this.homeview = '<%= asset_path("modules/core/views/home.view.html") %>';
-		this.aboutview = '<%= asset_path("modules/core/views/about.view.html") %>';
-		this.template('app/core.routes.coffee.erb', 'app/assets/javascripts/modules/core/configs/core.routes.coffee.erb');
-		this.template('app/core.controller.coffee.erb', 'app/assets/javascripts/modules/core/controllers/core.controller.coffee.erb');
-		this.template('app/home.view.html', 'app/assets/javascripts/modules/core/views/home.view.html');
-		this.template('app/about.view.html', 'app/assets/javascripts/modules/core/views/about.view.html');
+		this.template('app/_.client.module.coffee.erb', 'app/assets/javascripts/modules/core/core.client.module.coffee.erb');
+		this.loginview = '<%= asset_path("modules/users/views/login.client.view.html") %>';
+		this.homeview = '<%= asset_path("modules/core/views/home.client.view.html") %>';
+		this.aboutview = '<%= asset_path("modules/core/views/about.client.view.html") %>';
+		this.template('app/core.client.routes.coffee.erb', 'app/assets/javascripts/modules/core/config/core.client.routes.coffee.erb');
+		this.template('app/core.client.controller.coffee.erb', 'app/assets/javascripts/modules/core/controllers/core.client.controller.coffee.erb');
+		this.template('app/home.client.view.html', 'app/assets/javascripts/modules/core/views/home.client.view.html');
+		this.template('app/about.client.view.html', 'app/assets/javascripts/modules/core/views/about.client.view.html');
 		this.slugifiedName = 'users';
-		this.template('app/_.module.coffee.erb', 'app/assets/javascripts/modules/users/users.module.coffee.erb');
-		this.template('app/users.controller.coffee.erb', 'app/assets/javascripts/modules/users/controllers/users.controller.coffee.erb');
-		this.template('app/users.routes.coffee.erb', 'app/assets/javascripts/modules/users/configs/users.routes.coffee.erb');
-		this.template('app/login.view.html', 'app/assets/javascripts/modules/users/views/login.view.html');
+		this.template('app/_.client.module.coffee.erb', 'app/assets/javascripts/modules/users/users.client.module.coffee.erb');
+		this.template('app/users.client.controller.coffee.erb', 'app/assets/javascripts/modules/users/controllers/users.client.controller.coffee.erb');
+		this.template('app/users.client.routes.coffee.erb', 'app/assets/javascripts/modules/users/config/users.client.routes.coffee.erb');
+		this.template('app/login.client.view.html', 'app/assets/javascripts/modules/users/views/login.client.view.html');
   },
 	
   routes: function() {

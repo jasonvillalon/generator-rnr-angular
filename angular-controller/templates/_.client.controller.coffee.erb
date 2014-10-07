@@ -1,0 +1,6 @@
+ApplicationModules.push (angular) ->
+	angular.module('<%= slugifiedModuleName %>').controller '<%= classifiedControllerName %>Controller', ['$scope',
+		($scope) ->
+			# <%= humanizedControllerName %> controller logic
+			# ...
+	]

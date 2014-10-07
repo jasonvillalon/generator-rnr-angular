@@ -7,7 +7,7 @@ var util = require('util'),
 
 var ServiceGenerator = yeoman.generators.NamedBase.extend({
 	askForModuleName: function() {
-		var modulesFolder = process.cwd() + '/public/modules/';
+		var modulesFolder = process.cwd() + '/app/assets/javascripts/modules/';
 		var done = this.async();
 
 		var prompts = [{
@@ -46,7 +46,7 @@ var ServiceGenerator = yeoman.generators.NamedBase.extend({
 	},
 
 	renderServiceFile: function() {
-		this.template('_.client.service.js', 'public/modules/' + this.slugifiedModuleName + '/services/' + this.slugifiedName + '.client.service.js')
+		this.template('_.client.service.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/services/' + this.slugifiedName + '.client.service.coffee.erb')
 	}
 });
 

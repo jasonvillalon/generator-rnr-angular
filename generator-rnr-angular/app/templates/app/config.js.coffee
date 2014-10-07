@@ -1,2 +1,0 @@
-window.ApplicationModules = []
-window.RegisterModule = []

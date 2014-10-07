@@ -7,7 +7,7 @@ var util = require('util'),
 
 var FilterGenerator = yeoman.generators.NamedBase.extend({
 	askForModuleName: function() {
-		var modulesFolder = process.cwd() + '/public/modules/';
+		var modulesFolder = process.cwd() + '/app/assets/javascripts/modules/';
 		var done = this.async();
 
 		var prompts = [{
@@ -46,7 +46,7 @@ var FilterGenerator = yeoman.generators.NamedBase.extend({
 	},
 
 	renderFilterFile: function() {
-		this.template('_.client.filter.js', 'public/modules/' + this.slugifiedModuleName + '/filters/' + this.slugifiedName + '.client.filter.js')
+		this.template('_.client.filter.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/filters/' + this.slugifiedName + '.client.filter.coffee.erb')
 	}
 });
 

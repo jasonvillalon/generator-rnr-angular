@@ -1,0 +1,10 @@
+ApplicationModules.push (angular) ->
+	angular.module('<%= slugifiedModuleName %>').factory '<%= classifiedName %>', [
+		() ->
+			# <%= humanizedName %> service logic
+			# ...
+
+			# Public API
+			someMethod: () ->
+				true
+	]

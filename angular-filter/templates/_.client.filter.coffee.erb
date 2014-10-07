@@ -1,0 +1,9 @@
+ApplicationModules.push (angular) ->
+	angular.module('<%= slugifiedModuleName %>').filter '<%= camelizedName %>', [
+		() ->
+			return (input) ->
+				# <%= humanizedName %> directive logic
+				# ...
+
+				'<%= camelizedName %> filter: ' + input;
+	]

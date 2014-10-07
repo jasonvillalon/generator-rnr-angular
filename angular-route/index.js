@@ -6,7 +6,7 @@ var util = require('util'),
 
 var ViewGenerator = yeoman.generators.NamedBase.extend({
 	askForModuleName: function() {
-		var modulesFolder = process.cwd() + '/public/modules/';
+		var modulesFolder = process.cwd() + '/app/assets/javascripts/modules/';
 		var done = this.async();
 
 		var prompts = [{
@@ -83,7 +83,7 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 	},
 
 	renderRoute: function() {
-		var routesFilePath = process.cwd() + '/public/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.js';
+		var routesFilePath = process.cwd() + '/app/assets/javascripts/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.coffee.erb';
 
 		// If routes file exists we add a new state otherwise we render a new one
 		if (fs.existsSync(routesFilePath)) {
@@ -91,19 +91,18 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 			var routesFileContent = this.readFileAsString(routesFilePath);
 
 			// Append the new state
-			routesFileContent = routesFileContent.replace('$stateProvider.', this.engine(this.read('_.client.route.js'), this));
+			routesFileContent = routesFileContent.replace('$stateProvider.', this.engine(this.read('_.client.route.coffee.erb'), this));
 
 			// Save route file
 			this.writeFileFromString(routesFileContent, routesFilePath);
 		} else {
-			this.template('_.client.routes.js', 'public/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.js')
+			this.template('_.client.routes.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.coffee.erb')
 		}
 	},
 
 	renderRouteViewController: function() {
-		this.template('_.client.controller.js', 'public/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.js')
-		this.template('_.client.controller.test.js', 'public/modules/' + this.slugifiedModuleName + '/tests/' + this.slugifiedControllerName + '.client.controller.test.js')
-		this.template('_.client.view.html', 'public/modules/' + this.slugifiedModuleName + '/views/' + this.slugifiedViewName + '.client.view.html')
+		this.template('_.client.controller.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.coffee.erb')
+		this.template('_.client.view.html', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/views/' + this.slugifiedViewName + '.client.view.html')
 	}
 });
 

@@ -72,21 +72,21 @@ var ModuleGenerator = yeoman.generators.NamedBase.extend({
 
 	renderModule: function() {
 		// Create module folder
-		this.mkdir('public/modules/' + this.slugifiedName);
+		this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName);
 
 		// Create module sub-folders
-		if (this.addConfigFolder) this.mkdir('public/modules/' + this.slugifiedName + '/config');
-		if (this.addControllersFolder) this.mkdir('public/modules/' + this.slugifiedName + '/controllers');
-		if (this.addCSSFolder) this.mkdir('public/modules/' + this.slugifiedName + '/css');
-		if (this.addDirectivesFolder) this.mkdir('public/modules/' + this.slugifiedName + '/directives');
-		if (this.addFiltersFolder) this.mkdir('public/modules/' + this.slugifiedName + '/filters');
-		if (this.addImagesFolder) this.mkdir('public/modules/' + this.slugifiedName + '/img');
-		if (this.addServicesFolder) this.mkdir('public/modules/' + this.slugifiedName + '/services');
-		if (this.addTestsFolder) this.mkdir('public/modules/' + this.slugifiedName + '/tests');
-		if (this.addViewsFolder) this.mkdir('public/modules/' + this.slugifiedName + '/views');
+		if (this.addConfigFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/config');
+		if (this.addControllersFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/controllers');
+		if (this.addCSSFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/css');
+		if (this.addDirectivesFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/directives');
+		if (this.addFiltersFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/filters');
+		if (this.addImagesFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/img');
+		if (this.addServicesFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/services');
+		if (this.addTestsFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/tests');
+		if (this.addViewsFolder) this.mkdir('app/assets/javascripts/modules/' + this.slugifiedName + '/views');
 
 		// Render angular module definition
-		this.template('_.client.module.js', 'public/modules/' + this.slugifiedName + '/' + this.slugifiedName + '.client.module.js');
+		this.template('_.client.module.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedName + '/' + this.slugifiedName + '.client.module.coffee.erb');
 	}
 });
 
