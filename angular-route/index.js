@@ -90,6 +90,8 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 			// Read the source routes file content
 			var routesFileContent = this.readFileAsString(routesFilePath);
 
+			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
+			
 			// Append the new state
 			routesFileContent = routesFileContent.replace('$stateProvider.', this.engine(this.read('_.client.route.coffee.erb'), this));
 

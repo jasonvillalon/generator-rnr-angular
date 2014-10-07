@@ -1,5 +1,6 @@
-ApplicationModules.push (angular) ->
-	$stateProvider.
-			state '<%= slugifiedName %>', 
-				url: '/<%= slugifiedRoutePath %>',
-				templateUrl: 'modules/<%= slugifiedModuleName %>/views/<%= slugifiedViewName %>.client.view.html'
+
+        $stateProvider.
+          state "<%= slugifiedName %>",
+            url: "/<%= slugifiedRoutePath %>",
+            templateUrl: "<%= views %>"
+        $stateProvider.
