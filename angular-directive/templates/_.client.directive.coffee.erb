@@ -1,12 +1,8 @@
 ApplicationModules.push (angular) ->
-	angular.module("<%= slugifiedModuleName %>").directive "<%= camelizedName %>", [
+	angular.module("core").directive "stateChange", [
 		() ->
 				template: "<div></div>"
 				restrict: "E"
-				link: function postLink(scope, element, attrs) {
-					// <%= humanizedName %> directive logic
-					// ...
-
-					element.text("this is the <%= camelizedName %> directive");
-				}
+				compile: (scope, element, attrs) ->
+					element.text("this is the stateChange directive");
 	]
