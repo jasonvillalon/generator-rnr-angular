@@ -89,8 +89,6 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 		if (fs.existsSync(routesFilePath)) {
 			// Read the source routes file content
 			var routesFileContent = this.readFileAsString(routesFilePath);
-
-			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 			
 			// Append the new state
 			routesFileContent = routesFileContent.replace('$stateProvider.', this.engine(this.read('_.client.route.coffee.erb'), this));
@@ -98,11 +96,14 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 			// Save route file
 			this.writeFileFromString(routesFileContent, routesFilePath);
 		} else {
+			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 			this.template('_.client.routes.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.coffee.erb')
 		}
 	},
 
 	renderRouteViewController: function() {
+
+			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 		this.template('_.client.controller.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.coffee.erb')
 		this.template('_.client.view.html', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/views/' + this.slugifiedViewName + '.client.view.html')
 	}
