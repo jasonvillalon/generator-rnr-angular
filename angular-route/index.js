@@ -102,8 +102,7 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 	},
 
 	renderRouteViewController: function() {
-
-			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
+		this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 		this.template('_.client.controller.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.coffee.erb')
 		this.template('_.client.view.html', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/views/' + this.slugifiedViewName + '.client.view.html')
 	}
