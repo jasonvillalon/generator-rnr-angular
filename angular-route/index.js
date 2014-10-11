@@ -85,6 +85,7 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 	renderRoute: function() {
 		var routesFilePath = process.cwd() + '/app/assets/javascripts/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.coffee.erb';
 
+		this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 		// If routes file exists we add a new state otherwise we render a new one
 		if (fs.existsSync(routesFilePath)) {
 			// Read the source routes file content
@@ -96,7 +97,6 @@ var ViewGenerator = yeoman.generators.NamedBase.extend({
 			// Save route file
 			this.writeFileFromString(routesFileContent, routesFilePath);
 		} else {
-			this.views = "<%= asset_path('modules/"+this.slugifiedModuleName+"/views/"+this.slugifiedName+".client.view.html') %>";
 			this.template('_.client.routes.coffee.erb', 'app/assets/javascripts/modules/' + this.slugifiedModuleName + '/config/' + this.slugifiedModuleName + '.client.routes.coffee.erb')
 		}
 	},

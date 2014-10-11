@@ -13,7 +13,7 @@ require [
   "use strict"
 
   window.ApplicationConfiguration =
-    applicationModuleName : 'businesscard7'
+    applicationModuleName : '<%= projectName %>'
     applicationModuleVendorDependencies : [
       "ui.router"
       "restangular"

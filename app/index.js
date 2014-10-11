@@ -16,6 +16,21 @@ var RNRAngularGenerator = yeoman.generators.Base.extend({
     });
   },
 
+	askForProjectName: function(){
+		var done = this.async();
+
+		var prompts = [{
+			name: 'projectName',
+			message: 'What would you like to call your application?',
+			default: 'GRAB'
+		}];
+
+		this.prompt(prompts, function(props) {
+			this.projectName = this._.humanize(props.projectName);
+			done();
+		}.bind(this));
+	},
+	
   askForCSSLibrary: function () {
     var cb = this.async();
 
