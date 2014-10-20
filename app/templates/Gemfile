@@ -1,4 +1,5 @@
 # twitter bootstrap
+gem 'bootstrap-material-design'
 gem 'bootstrap-sass'
 # auto prefixer
 gem 'autoprefixer-rails'

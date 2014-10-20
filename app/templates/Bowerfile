@@ -1,12 +1,19 @@
-# auto generate bower assets<% if (includeLodash) { %>
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+# asset 'bootstrap'# auto generate bower assets
 #
-asset 'lodash'<% } %>
+asset 'lodash'
 asset 'angular'
 asset 'angular-mocks'
-asset 'restangular'<% if (includeBindonce) { %>
-asset 'angular-bindonce'<% } %>
-asset 'angular-ui-router', '0.2.10'<% if (includeUIBootstrap) { %>
-asset 'angular-bootstrap'<% } %><% if (includeAngularAnimate) { %>
-asset 'angular-animate'<% } %><% if (includeButtonCss) { %>
-asset 'Buttons'<% } %><% if (includeAnimateCss) { %>
-asset 'animate-sass'<% } %>
+asset 'restangular'
+asset 'angular-resource'
+asset 'angular-bindonce'
+asset 'angular-ui-router', '0.2.10'
+asset 'angular-bootstrap'
+asset 'angular-animate'
+asset 'Buttons'
+asset 'animate-sass'
+asset 'bootstrap'
+asset 'bootstrap-sidebar'
+asset 'jquery'
