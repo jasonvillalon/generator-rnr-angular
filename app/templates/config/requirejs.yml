@@ -1,44 +1,51 @@
 paths:
   'angular': 'angular/angular'
-    # require angular mocks for testing
+  'angular-resource': 'angular-resource/angular-resource'
+  # require angular mocks for testing
   'angular-mocks': 'angular-mocks/angular-mocks'
   # require restangular for easily handling sending and receiving request
-  'restangular': 'restangular/dist/restangular'<% if (includeAngularAnimate) { %>
+  'restangular': 'restangular/dist/restangular'
   # require angular animate for easily handling animation. I recommend to use this with tweenmax (bower install --save greensock)
-  'angular-animate': 'angular-animate/angular-animate'<% } %>
+  'angular-animate': 'angular-animate/angular-animate'
   # require angular for better handling and binding controller
-  'angular-ui-router': 'angular-ui-router/release/angular-ui-router'<% if (includeBindonce) { %>
+  'angular-ui-router': 'angular-ui-router/release/angular-ui-router'
   # require bindonce to optimize watch for angular binding [https://github.com/Pasvaz/bindonce]
-  'bindonce': 'angular-bindonce/bindonce'<% } %><% if (includeUIBootstrap) { %>
+  'bindonce': 'angular-bindonce/bindonce'
   # require ui-bootstrap with the embeded template [http://angular-ui.github.io/bootstrap/]
-  'ui-bootstrap-tpls': 'angular-bootstrap/ui-bootstrap-tpls'<% }%>
+  'ui-bootstrap-tpls': 'angular-bootstrap/ui-bootstrap-tpls'
   # require jquery
   'jquery': 'jquery'
-  'jquery_ujs': 'jquery_ujs'<% if (includeLodash) { %>
+  'jquery_ujs': 'jquery_ujs'
   # require lodash
-  'lodash': 'lodash/dist/lodash'<% } %>
+  'lodash': 'lodash/dist/lodash'
   # require bootstrap.js to make bootstrap components work
-  'bootstrap': 'bootstrap-sprockets'
+  'bootstrap': 'bootstrap'
+  'bootstrap-material-design': 'bootstrap-material-design/material'
+  'ripples': 'bootstrap-material-design/ripples'
   # jasmine boostrap
   'jasmine': 'jasmine'
   'jasmine-html': 'jasmine-html'
   'jasmine-specs': 'jasmine-specs'
   'json2': 'json2'
   'boot': 'boot'
+  'sidebar-js': 'bootstrap-sidebar/dist/js/sidebar'
+  'sidebar-css': 'bootstrap-sidebar/dist/css/sidebar'
 shim:
   'jquery_ujs': ['jquery']
   'angular':
     exports: 'angular'
     deps: ['jquery']
-  'angular-mocks': ['angular']<% if (includeLodash) { %>
+  'angular-resource': ['angular']
+  'angular-mocks': ['angular']
   'lodash':
-    exports: '_'<% } %>
-  'restangular': ['angular']<% if (includeAngularAnimate) { %>
-  'angular-animate': ['angular']<% } %>
-  'angular-ui-router': ['angular']<% if (includeBindonce) { %>
-  'bindonce': ['angular']<% } %><% if (includeUIBootstrap) { %>
-  'ui-bootstrap-tpls': ['angular']<% } %>
+    exports: '_'
+  'restangular': ['angular']
+  'angular-animate': ['angular']
+  'angular-ui-router': ['angular']
+  'bindonce': ['angular']
+  'ui-bootstrap-tpls': ['angular']
   'bootstrap': ['jquery']
+  'bootstrap-material-design': ['jquery']
   'jasmine':
     exports: 'window.jasmineRequire'
   'jasmine-html':
